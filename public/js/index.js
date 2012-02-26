@@ -15,8 +15,41 @@ var loadScript = function(url, callback){
 }
 
 $(document).ready(function(response){
-    $('#stockArrivalDateDiv').datepicker().on('changeDate', function(ev){
-      console.log(ev.date.valueOf());
-      $('#stockArrivalDateDiv').datepicker('hide');
-    });
+    loadScript('/js/newSku.js');
+    initDatePickers();
 });
+
+var initDatePickers = function(){
+  $('#stockArrivalDateDiv').datepicker().on('changeDate', function(ev){
+    console.log(ev.date.valueOf());
+    $('#stockArrivalDateDiv').datepicker('hide');
+  });
+
+  $('#launchDateDiv').datepicker().on('changeDate', function(ev){
+    $('#launchDateDiv').datepicker('hide');   
+  });
+  
+  $('#contentAssignDateDiv').datepicker().on('changeDate', function(ev){
+    $('#contentAssignDateDiv').datepicker('hide');   
+  });
+  
+  $('#editingCompDateDiv').datepicker().on('changeDate', function(ev){
+    $('#editingCompDateDiv').datepicker('hide');   
+  });
+  
+  $('#catalogSubDateDiv').datepicker().on('changeDate', function(ev){
+    $('#catalogSubDateDiv').datepicker('hide');   
+  });
+  
+  $('#approvedDateDiv').datepicker().on('changeDate', function(ev){
+    $('#approvedDateDiv').datepicker('hide');   
+  });  
+  
+  $('#photoCompleteDateDiv').datepicker().on('changeDate', function(ev){
+    $('#photoCompleteDateDiv').datepicker('hide');   
+  });
+  
+  $('#imageAssignDateDiv').datepicker().on('changeDate', function(ev){
+    $('#imageAssignDateDiv').datepicker('hide');   
+  });
+}
