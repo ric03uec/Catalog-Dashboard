@@ -1,0 +1,17 @@
+extends index
+
+block content
+  form.form-horizontal(method="post", id="editingUpdateForm")
+    div.control-group
+      label.control-label(for="editingCompDate") Editing Completion Date :
+      div.controls
+        div.input-append.date(id="editingCompDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
+          input.span2(size="16", value="12/01/2012", readonly, name="editingCompDate", id="editingCompDate")
+          span.add-on
+            i.icon-th
+    div.control-group
+      label.control-label(for="editedImagePath") Edited Image Path :
+      div.controls
+        input(type="text", name="editedImagePath", id="editedImagePath")
+
+    input.btn.btn-primary(type="submit", value="Save")

@@ -1,0 +1,33 @@
+extends index
+
+block content
+  form.form-horizontal(method="post", id="photoUpdateForm")
+    div.control-group
+      label.control-label(for="photoCompleteDate") Photography Completion Date :
+      div.controls
+        div.input-append.date(id="photoCompleteDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
+          input.span2(size="16", value="12/01/2012", readonly, name="photoCompleteDate", id="photoCompleteDate")
+          span.add-on
+            i.icon-th
+    div.control-group
+      label.control-label(for="noOfImages") Number of Images :
+      div.controls
+        input(type="text", name="noOfImages", id="noOfImages")
+    div.control-group
+      label.control-label(for="editingAssignedTo") Editing Assigned To :
+      div.controls
+        input(type="text", name="editingAssignedTo", id="editingAssignedTo")    
+    div.control-group
+      label.control-label(for="rawImgLocation") Raw Image Location :
+      div.controls
+        input(type="text", name="rawImageLocation", id="rawImageLocation")
+    div.control-group
+      label.control-label(for="imageAssignDate") Image Assignment Date :
+      div.controls
+        div.input-append.date(id="imageAssignDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
+          input.span2(size="16", value="12/01/2012", readonly, name="imageAssignDate", id="imageAssignDate")
+          span.add-on
+            i.icon-th
+    
+
+    input.btn.btn-primary(type="submit", value="Save")

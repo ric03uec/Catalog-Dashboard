@@ -1,0 +1,17 @@
+extends index
+
+block content
+  form.form-horizontal(method="post", id="prodLaunchForm")
+    div.control-group
+      label.control-label(for="launchComplete") Launch Complete :
+      div.controls
+        input(type="checkbox", name="launchComplete", id="launchComplete")
+    div.control-group
+      label.control-label(for="launchDate") Launch Date :
+      div.controls
+        div.input-append.date(id="launchDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
+          input.span2(size="16", value="12/01/2012", readonly, name="launchDate", id="launchDate")
+          span.add-on
+            i.icon-th
+
+    input.btn.btn-primary(type="submit", value="Save")
