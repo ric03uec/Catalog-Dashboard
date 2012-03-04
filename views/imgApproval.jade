@@ -1,7 +1,11 @@
 extends index
 
 block content
-  form.form-horizontal(method="post", id="imgApprovalForm")
+  form.form-horizontal(method="post", id="imgApprovalForm", action="/form/imageApproval")
+    div.control-group
+      label.control-label(for="entryId") Entry Id :
+      div.controls
+        input(type="text", name="entryId", id="entryId", readonly="readonly", value="#{entryId}")
     div.control-group
       label.control-label(for="approvedImagePath") Approved Image Path :
       div.controls

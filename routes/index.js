@@ -1,10 +1,19 @@
 'use strict'
 
 var util = require('util');
-var Logger = require('devnull');
-var Moment = require('moment');
+var logger = require('devnull');
 var db = require('../models/db');
-var logger = new Logger({namespacing : 0});
+var logger = new logger({namespacing : 0});
+
+var dashboard = require('./dashboard');
+var newSku = require('./newSku');
+var contentAssign = require('./contentAssign');
+var contentComplete = require('./contentComplete');
+var photoUpdate = require('./photoUpdate');
+var editUpdate = require('./editUpdate');
+var imgApproval = require('./imgApproval');
+var prodLaunch = require('./prodLaunch');
+var main = require('./main');
 /*
  * GET home page.
  */
@@ -14,39 +23,29 @@ module.exports = function(app){
     */
   app.get('/', function(req, res){
     logger.log('Serving request for url [GET]' + req.route.path)
-    db.query('select * from entries', function(err, results, fields){
-      res.render('newSku', { title: 'catalog Dashboard' });
-    }); 
+    res.render('newSku', {title :'catalog Dashboard'});
   });
 
-  /**
-    * Map the URL '/login' to the callback
-    */
-  app.get('/show/:id', function(req, res){
-    logger.log('Serving request for url [GET] ' + req.route.path);
-  });
-  
-  app.post('/form/newSku', function(req, res){
-    logger.log('serving request for url [post] ' + req.route.path);
-    console.log(req.body);
+  app.get('/dashboard', dashboard.show);
+  app.post('/form/newSku', newSku.save);
 
-    var queryStr = 'insert into entries set' + 
-      'stock_arrival_date = "' +req.body.stockArrivalDate+ '" and ' +
-                  'brands = "' + req.body.brands + '" and ' +
-                  'sheet_no = ' + req.body.sheetNo;
-    console.log(queryStr);
-    db.query(queryStr, function(err, results){
-      console.log(results);
-      res.json({
-        'retStatus' : 'success'  
-      });  
-    });
-    
-  });
-  
-  app.get('/dashboard', function(req, res){
-    logger.log('serving request for url [GET] ' + req.route.path);
-    res.render('dashboard', { title : 'catalog Dashboard' });
-  });
+  app.get('/form/contentAssign/:id', contentAssign.show); 
+  app.post('/form/contentAssign', contentAssign.save);
 
+  app.get('/form/contentComplete/:id', contentComplete.show); 
+  app.post('/form/contentComplete', contentComplete.save);
+
+  app.get('/form/photoUpdate/:id', photoUpdate.show);
+  app.post('/form/photoUpdate', photoUpdate.save);
+
+  app.get('/form/editUpdate/:id', editUpdate.show);
+  app.post('/form/editUpdate', editUpdate.save);
+
+  app.get('/form/imageApproval/:id', imgApproval.show);
+  app.post('/form/imageApproval', imgApproval.save);
+
+  app.get('/form/prodLaunch/:id', prodLaunch.show);
+  app.post('/form/prodLaunch', prodLaunch.save);
+
+  app.get('/form/complete/:id', main.show); 
 };

@@ -1,0 +1,94 @@
+extends index
+
+block content
+  form.form-horizontal(action="/dashboard", method="get")
+    div.control-group
+      label.control-label(for="entryId") Entry Id :
+      div.controls
+        input(type="text", name="entryId", id="entryId", readonly="readonly", value="#{entry.id}")
+    div.control-group
+      label.control-label(for="stockArrDate") Stock Arrival Date :
+      div.controls
+        input(type="text", name="stockArrDate", id="stockArrDate", readonly="readonly", value="#{entry.stock_arrival_date}")
+    div.control-group
+      label.control-label(for="brands") Brands :
+      div.controls
+        input(type="text", name="brands", id="brands", readonly="readonly", value="#{entry.brands}")
+    div.control-group
+      label.control-label(for="sheetNumber") Sheet Number :
+      div.controls
+        input(type="text", name="sheetNumber", id="sheetNumber", readonly="readonly", value="#{entry.sheet_no}")
+    div.control-group
+      label.control-label(for="noOfSku") No. Of SKU :
+      div.controls
+        input(type="text", name="noOfSku", id="noOfSku", readonly="readonly", value="#{entry.no_of_sku}")
+    div.control-group
+      label.control-label(for="contentAssignee") Content Assignee :
+      div.controls
+        input(type="text", name="contentAssignee", id="contentAssignee", readonly="readonly", value="#{entry.content_assignee}")
+    div.control-group
+      label.control-label(for="contentAssignDate") Content Assign Date :
+      div.controls
+        input(type="text", name="contentAssignDate", id="contentAssignDate", readonly="readonly", value="#{entry.content_assign_date}")
+    div.control-group
+      label.control-label(for="catalogName") Catalog Name :
+      div.controls
+        input(type="text", name="catalogName", id="catalogName", readonly="readonly", value="#{entry.catalog_name}")
+    div.control-group
+      label.control-label(for="catalogSubDate") Catalog Submission Date :
+      div.controls
+        input(type="text", name="catalogSubDate", id="catalogSubDate", readonly="readonly", value="#{entry.catalog_submission_date}") 
+    div.control-group
+      label.control-label(for="photoCompDate") Photo Completion Date :
+      div.controls
+        input(type="text", name="photoCompDate", id="photoCompDate", readonly="readonly", value="#{entry.photo_complete_date}")
+    div.control-group
+      label.control-label(for="noOfImages") No. Of Images :
+      div.controls
+        input(type="text", name="noOfImages", id="noOfImages", readonly="readonly", value="#{entry.no_of_images}")
+    div.control-group
+      label.control-label(for="editAssigTo") Editing Assigned To :
+      div.controls
+        input(type="text", name="editAssigTo", id="editAssigTo", readonly="readonly", value="#{entry.editing_assigned_to}")
+    div.control-group
+      label.control-label(for="rawImgLocation") Raw Image Location :
+      div.controls
+        input(type="text", name="rawImgLocation", id="rawImgLocation", readonly="readonly", value="#{entry.raw_image_location}")
+    div.control-group
+      label.control-label(for="imgAssignDate") Image Assignment Date :
+      div.controls
+        input(type="text", name="imageAssignDate", id="imageAssignDate", readonly="readonly", value="#{entry.image_assignment_date}")
+    div.control-group
+      label.control-label(for="editCompDate") Editing Completion Date :
+      div.controls
+        input(type="text", name="editCompDate", id="editCompDate", readonly="readonly", value="#{entry.editing_completion_date}")
+    div.control-group
+      label.control-label(for="editedImagePath") Edited Image Path :
+      div.controls
+        input(type="text", name="editedImagePath", id="editedImagePath", readonly="readonly", value="#{entry.edited_image_path}")
+    div.control-group
+      label.control-label(for="approvedImgPath") Approved Image Path :
+      div.controls
+        input(type="text", name="approvedImgPath", id="approvedImgPath", readonly="readonly", value="#{entry.approved_image_path}")
+    div.control-group
+      label.control-label(for="approvedImgs") Approved Images :
+      div.controls
+        input(type="text", name="approvedImgs", id="approvedImgs", readonly="readonly", value="#{entry.approved_images}")
+    div.control-group
+      label.control-label(for="approvedDate") Approved Date :
+      div.controls
+        input(type="text", name="approvedDate", id="approvedDate", readonly="readonly", value="#{entry.approved_dates}")
+    div.control-group
+      label.control-label(for="rating") Rating :
+      div.controls
+        input(type="text", name="rating", id="rating", readonly="readonly", value="#{entry.rating}")
+    div.control-group
+      label.control-label(for="launchComplete") Launch Complete :
+      div.controls
+        input(type="text", name="launchComplete", id="launchComplete", readonly="readonly", value="#{entry.launch_complete}")
+    div.control-group
+      label.control-label(for="launchDate") Launch Date:
+      div.controls
+        input(type="text", name="launchDate", id="launchDate", readonly="readonly", value="#{entry.launch_date}")
+
+    input.btn.btn-primary(type="submit", value="OK")

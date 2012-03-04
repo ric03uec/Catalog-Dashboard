@@ -1,7 +1,11 @@
 extends index
 
 block content
-  form.form-horizontal(method="post", id="photoUpdateForm")
+  form.form-horizontal(method="post", id="photoUpdateForm", action="/form/photoUpdate")
+    div.control-group
+      label.control-label(for="entryId") Entry Id :
+      div.controls
+        input(type="text", name="entryId", id="entryId", readonly="readonly", value="#{entryId}")
     div.control-group
       label.control-label(for="photoCompleteDate") Photography Completion Date :
       div.controls

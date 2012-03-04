@@ -1,0 +1,60 @@
+extends index
+
+block content
+  table#skuDetails.table.table-condensed.table-bordered.table-condensed
+    thead
+      tr
+        th 
+          p Task Id
+        th 
+          p Assignment Form
+        th 
+          p Content Complete
+        th 
+          p Photo Update
+        th 
+          p Edit Update
+        th 
+          p Img Approval
+        th 
+          p Prod Launch
+    tbody#catalogContent
+    - each entry in allEntries 
+      tr
+        td
+          - if(entry.stock_arrival_date)
+            - if(entry.launch_complete === null)
+              p #{entry.id}
+            - else
+              a(href='/form/complete/#{entry.id}') #{entry.id}
+        td
+          - if(entry.content_asignee === null)
+            a(href='/form/contentAssign/#{entry.id}') Form2
+          - else
+            p Done
+        td
+          - if(entry.catalog_name === null)
+            a(href='/form/contentComplete/#{entry.id}') Form3
+          - else
+            p Done
+        td
+          - if(entry.photo_complete_date === null)
+            a(href='/form/photoUpdate/#{entry.id}') Form4
+          - else
+            p Done
+        td
+          - if(entry.editing_completion_date === null)
+            a(href='/form/editUpdate/#{entry.id}') Form5
+          - else
+            p Done
+        td
+          - if(entry.approved_image_path === null)
+            a(href='/form/imageApproval/#{entry.id}') Form6
+          - else
+            p Done
+        td
+          - if(entry.launch_complete === null)
+            a(href='/form/prodLaunch/#{entry.id}') Form7
+          - else
+            p Done
+    

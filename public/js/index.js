@@ -15,7 +15,6 @@ var loadScript = function(url, callback){
 }
 
 $(document).ready(function(response){
-    loadScript('/js/newSku.js');
     initDatePickers();
 });
 

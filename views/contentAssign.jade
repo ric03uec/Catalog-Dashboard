@@ -1,7 +1,11 @@
 extends index
 
 block content
-  form.form-horizontal(method="post", id="contentAssignForm")
+  form.form-horizontal(method="post", id="contentAssignForm", action="/form/contentAssign")
+    div.control-group
+      label.control-label(for="entryId") Entry Id :
+      div.controls
+        input(type="text", name="entryId", id="entryId", readonly="readonly", value="#{entryId}")
     div.control-group
       label.control-label(for="contentAssignee") Content Assignee :
       div.controls
