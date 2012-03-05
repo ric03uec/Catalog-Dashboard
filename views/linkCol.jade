@@ -1,0 +1,30 @@
+div#form2
+  - if(entry.content_asignee === null)
+    a.small-text(href='/form/contentAssign/#{entry.id}') Form2
+  - else
+    p.small-text Form2-Done
+div#form3
+  - if(entry.catalog_name === null)
+    a.small-text(href='/form/contentComplete/#{entry.id}') Form3
+  - else
+    p.small-text Form3-Done
+div#form4
+  - if(entry.photo_complete_date === null)
+    a.small-text(href='/form/photoUpdate/#{entry.id}') Form4
+  - else
+    p.small-text Form4-Done
+div#form5
+  - if(entry.editing_completion_date === null)
+    a.small-text(href='/form/editUpdate/#{entry.id}') Form5
+  - else
+    p.small-text Form5-Done
+div#form6
+  - if(entry.approved_image_path === null)
+    a.small-text(href='/form/imageApproval/#{entry.id}') Form6
+  - else
+    p.small-text Form6-Done
+div#form7
+  - if(entry.launch_complete === null)
+    a.small-text(href='/form/prodLaunch/#{entry.id}') Form7
+  - else
+    p.small-text Form7-Done

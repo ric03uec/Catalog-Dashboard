@@ -4,20 +4,20 @@ block content
   table#skuDetails.table.table-condensed.table-bordered.table-condensed
     thead
       tr
-        th 
+        th(width="5%") 
           p Task Id
-        th 
-          p Assignment Form
-        th 
-          p Content Complete
-        th 
-          p Photo Update
-        th 
-          p Edit Update
-        th 
-          p Img Approval
-        th 
-          p Prod Launch
+        th(width="20%")
+          p Date of Stock Handover
+        th(width="5%") 
+          p No Of SKU
+        th(width="15%")
+          p Brand Name
+        th(width="20%") 
+          p Catalogue Name
+        th(width="20%")
+          p Content Writer
+        th(width="15%")
+          p Links
     tbody#catalogContent
     - each entry in allEntries 
       tr
@@ -28,33 +28,30 @@ block content
             - else
               a(href='/form/complete/#{entry.id}') #{entry.id}
         td
-          - if(entry.content_asignee === null)
-            a(href='/form/contentAssign/#{entry.id}') Form2
+          - if(entry.stock_arrival_date === null)
+            p.small-text Incomplete
           - else
-            p Done
+            p.small-text #{entry.stock_arrival_date}
         td
-          - if(entry.catalog_name === null)
-            a(href='/form/contentComplete/#{entry.id}') Form3
+          - if(entry.no_of_sku === null)
+            p.small-text Incomplete
           - else
-            p Done
+            p.small-text  #{entry.no_of_sku}
         td
-          - if(entry.photo_complete_date === null)
-            a(href='/form/photoUpdate/#{entry.id}') Form4
+          - if(entry.brands === null)
+            p.small-text Incomplete
           - else
-            p Done
+            p.small-text #{entry.brands}
         td
-          - if(entry.editing_completion_date === null)
-            a(href='/form/editUpdate/#{entry.id}') Form5
+          - if(entry.catalog_name=== null)
+            p.small-text Incomplete
           - else
-            p Done
+            p.small-text #{entry.catalog_name}
         td
-          - if(entry.approved_image_path === null)
-            a(href='/form/imageApproval/#{entry.id}') Form6
+          - if(entry.editing_assigned_to === null)
+            p.small-text Incomplete
           - else
-            p Done
+            p.small-text #{entry.editing_assigned_to}
         td
-          - if(entry.launch_complete === null)
-            a(href='/form/prodLaunch/#{entry.id}') Form7
-          - else
-            p Done
+          include linkCol 
     
