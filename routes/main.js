@@ -13,6 +13,10 @@ main.show = function(req, res){
   var queryStr = 'select * from entries where id =' + req.params.id + ';';
   db.query(queryStr, function(err, results){
     var entry = results[0]; 
+    var date = entry['stock_arrival_date'];
+    date = Moment(date + '', "ddd, DD MMM YYYY hh:mm:ss zz");
+    date = Moment(date).format('DD-MM-YYYY');
+    entry['stock_arrival_date'] = date;
     res.render('showEntry' , {title : 'catalog Dashboard','entry': entry}); 
   });
 };
