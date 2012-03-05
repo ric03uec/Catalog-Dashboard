@@ -14,12 +14,10 @@ newSku.save = function(req, res){
 
   var stockArrivalDate = req.body.stockArrivalDate;
   stockArrivalDate = Moment(stockArrivalDate,"DD/MM/YYYY").format('YYYY-MM-DD');
-  console.log(stockArrivalDate);
   var queryStr = 'insert into entries(stock_arrival_date, brands, sheet_no, no_of_sku) ' +
        ' values ("' + stockArrivalDate + '", "' + req.body.brands + '" , ' +req.body.sheetNo+ ',' + req.body.noOfSku + ');';
 
   db.query(queryStr, function(err, results){
-    console.log(results);
     if(!err && results){
       catalog.getAll(function(errAll, allEntries){
         if(!errAll && allEntries){

@@ -16,7 +16,6 @@ editUpdate .show = function(req, res){
 };
 
 editUpdate .save = function(req, res){
-  console.log(req.body);
 
   var editedImgPath= req.body.editedImagePath;
   var editCompDate= req.body.editingCompDate;

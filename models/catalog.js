@@ -10,13 +10,15 @@ catalog.getAll = function(callback){
   var queryStr = 'select * from entries ';
   db.query(queryStr, function(err, results){
     if(!err && results){
-      for(var i = 0 ; i < results.length ; i++){
+      var reverseResults = [];
+      for(var i = results.length-1 ; i >= 0 ; i--){
         var date = results[i]['stock_arrival_date'];
         date = Moment(date+ '', "ddd, DD MMM YYYY hh:mm:ss zz")
         date = Moment(date).format('DD-MM-YYYY');
         results[i]['stock_arrival_date'] = date;
+        reverseResults.push(results[i]);
       }
-      callback(null, results);
+      callback(null, reverseResults);
     }else{
       util.error('Error fetching all the entries from DB : ' + err);
       callback(err);
