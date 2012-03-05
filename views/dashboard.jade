@@ -23,10 +23,7 @@ block content
       tr
         td
           - if(entry.stock_arrival_date)
-            - if(entry.launch_complete === null)
-              p #{entry.id}
-            - else
-              a(href='/form/complete/#{entry.id}') #{entry.id}
+            a(href='/form/complete/#{entry.id}') #{entry.id}
         td
           - if(entry.stock_arrival_date === null)
             p.small-text Incomplete
