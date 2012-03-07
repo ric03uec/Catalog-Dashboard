@@ -12,6 +12,7 @@ var prodLaunch = {};
 prodLaunch.show = function(req, res){
   logger.log('serving request for url [GET] ' + req.route.path);
   res.render('prodLaunch',{title : 'catalog Dashboard', 
+                formName : 'Product Launch Complete',
                 entryId : req.params.id});
 };
 

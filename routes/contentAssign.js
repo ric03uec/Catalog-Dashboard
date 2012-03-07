@@ -12,7 +12,8 @@ var contentAssign = {};
 contentAssign.show = function(req, res){
   logger.log('serving request for url [GET] ' + req.route.path);
   res.render('contentAssign',{title : 'catalog Dashboard', 
-                entryId : req.params.id});
+                entryId : req.params.id,
+                formName : 'Content Assignee'});
 };
 
 contentAssign.save = function(req, res){

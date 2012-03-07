@@ -12,6 +12,7 @@ var contentComplete = {};
 contentComplete.show = function(req, res){
   logger.log('serving request for url [GET] ' + req.route.path);
   res.render('contentComplete',{title : 'catalog Dashboard', 
+                formName : 'Request Images',
                 entryId : req.params.id});
 };
 

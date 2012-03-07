@@ -1,6 +1,7 @@
 extends index
 
 block content
+  h2 #{formName}
   form.form-horizontal(method="post", id="imgApprovalForm", action="/form/imageApproval")
     div.control-group
       label.control-label(for="entryId") Entry Id :

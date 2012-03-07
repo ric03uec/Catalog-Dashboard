@@ -1,25 +1,26 @@
 extends index
 
 block content
-  form.form-horizontal(method="post", id="newSkuForm", action="/form/newSku")
-    div.control-group
-      label.control-label(for="stockArrivalDate") Stock Arrival Date :
-      div.controls
-        div.input-append.date(id="stockArrivalDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
-          input.span2(size="16", value="12/01/2012", readonly, name="stockArrivalDate", id="stockArrivalDate")
-          span.add-on
-            i.icon-th
+  h2 #{formName}
+    form.form-horizontal(method="post", id="newSkuForm", action="/form/newSku")
       div.control-group
-        label.control-label(for="brands") Brands :
+        label.control-label(for="stockArrivalDate") Stock Arrival Date :
         div.controls
-          input.input(type="text", name="brands", id="brands")
-      div.control-group
-        label.control-label(for="sheetNo") Sheet Number :
-        div.controls
-          input.input(type="text", name="sheetNo", id="sheetNo")
-      div.control-group
-        label.control-label(for="noOfSku") Number Of SKU :
-        div.controls
-          input(type="tex", name="noOfSku", id="noOfSku")
+          div.input-append.date(id="stockArrivalDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
+            input.span2(size="16", value="12/01/2012", readonly, name="stockArrivalDate", id="stockArrivalDate")
+            span.add-on
+              i.icon-th
+        div.control-group
+          label.control-label(for="sheetNo") Sheet Number :
+          div.controls
+            input.input(type="text", name="sheetNo", id="sheetNo")
+        div.control-group
+          label.control-label(for="brands") Brands :
+          div.controls
+            input.input(type="text", name="brands", id="brands")
+        div.control-group
+          label.control-label(for="noOfSku") Number Of SKU :
+          div.controls
+            input(type="text", name="noOfSku", id="noOfSku")
 
-    input.btn.btn-primary(type="submit", value="Save")
+      input.btn.btn-primary(type="submit", value="Save")

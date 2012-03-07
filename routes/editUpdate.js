@@ -12,6 +12,7 @@ var editUpdate = {};
 editUpdate .show = function(req, res){
   logger.log('serving request for url [GET] ' + req.route.path);
   res.render('editingUpdate',{title : 'catalog Dashboard', 
+                formName : 'Submitted Images for Approval',
                 entryId : req.params.id});
 };
 

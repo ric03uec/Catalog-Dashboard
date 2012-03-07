@@ -22,8 +22,9 @@ module.exports = function(app){
     * Map the URL '/' to the callback
     */
   app.get('/', function(req, res){
-    logger.log('Serving request for url [GET]' + req.route.path)
-    res.render('newSku', {title :'catalog Dashboard'});
+    logger.log('Serving request for url [GET]' + req.route.path);
+    res.render('newSku', { title :'catalog Dashboard', 
+                            formName : 'Content Receipt'});
   });
 
   app.get('/dashboard', dashboard.show);

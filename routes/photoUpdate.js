@@ -12,6 +12,7 @@ var photoUpdate = {};
 photoUpdate.show = function(req, res){
   logger.log('serving request for url [GET] ' + req.route.path);
   res.render('photoUpdate',{title : 'catalog Dashboard', 
+                formName : 'Assign Images for Editing',
                 entryId : req.params.id});
 };
 

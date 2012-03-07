@@ -23,6 +23,7 @@ newSku.save = function(req, res){
         if(!errAll && allEntries){
           res.render('dashboard', 
                 {'title' : 'catalog Dashboard',
+                 'formName' : 'Content Receipt',
                  'formType' : 1,
                  'formId' : results.insertId,
                  'allEntries' : allEntries});

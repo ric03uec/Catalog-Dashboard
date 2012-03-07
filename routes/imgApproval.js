@@ -12,6 +12,7 @@ var imgApproval = {};
 imgApproval.show = function(req, res){
   logger.log('serving request for url [GET] ' + req.route.path);
   res.render('imgApproval',{title : 'catalog Dashboard', 
+                formName : 'Approve and Rate Images',
                 entryId : req.params.id});
 };
 
