@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `entries`;
 CREATE TABLE `entries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `stock_arrival_date` datetime NOT NULL,
@@ -22,4 +23,4 @@ CREATE TABLE `entries` (
   `launch_complete` tinyint(1) DEFAULT NULL,
   `launch_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 ;
