@@ -19,36 +19,21 @@ $(document).ready(function(response){
 });
 
 var initDatePickers = function(){
-  $('#stockArrivalDateDiv').datepicker().on('changeDate', function(ev){
-    console.log(ev.date.valueOf());
-    $('#stockArrivalDateDiv').datepicker('hide');
-  });
+  
+  var day = moment(new Date()).format("DD/MM/YYYY");
+  $('#stockArrivalDate').val(day);
 
-  $('#launchDateDiv').datepicker().on('changeDate', function(ev){
-    $('#launchDateDiv').datepicker('hide');   
-  });
-  
-  $('#contentAssignDateDiv').datepicker().on('changeDate', function(ev){
-    $('#contentAssignDateDiv').datepicker('hide');   
-  });
-  
-  $('#editingCompDateDiv').datepicker().on('changeDate', function(ev){
-    $('#editingCompDateDiv').datepicker('hide');   
-  });
-  
-  $('#catalogSubDateDiv').datepicker().on('changeDate', function(ev){
-    $('#catalogSubDateDiv').datepicker('hide');   
-  });
-  
-  $('#approvedDateDiv').datepicker().on('changeDate', function(ev){
-    $('#approvedDateDiv').datepicker('hide');   
-  });  
-  
-  $('#photoCompleteDateDiv').datepicker().on('changeDate', function(ev){
-    $('#photoCompleteDateDiv').datepicker('hide');   
-  });
-  
-  $('#imageAssignDateDiv').datepicker().on('changeDate', function(ev){
-    $('#imageAssignDateDiv').datepicker('hide');   
-  });
+  $('#catalogSubDate').val(day);
+
+  $('#editingCompDate').val(day);
+
+  $('#contentAssignDate').val(day);
+
+  $('#imageAssignDate').val(day);
+
+  $('#photoCompleteDate').val(day);
+
+  $('#launchDate').val(day);
+ 
+  $('#approvedDate').val(day);
 }

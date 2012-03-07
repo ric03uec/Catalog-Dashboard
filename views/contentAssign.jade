@@ -14,9 +14,6 @@ block content
     div.control-group
       label.control-label(for="contentAssignDate") Content Assignment Date :
       div.controls
-        div.input-append.date(id="contentAssignDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
-          input.span2(size="16", value="12/01/2012", readonly, name="contentAssignDate", id="contentAssignDate")
-          span.add-on
-            i.icon-th
+        input.input-small(type="text", name="contentAssignDate", id="contentAssignDate", readonly="readonly")
 
     input.btn.btn-primary(type="submit", value="Save")

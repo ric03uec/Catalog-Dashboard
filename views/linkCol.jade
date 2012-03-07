@@ -1,30 +1,30 @@
 div#form2
   - if(entry.content_asignee === null)
-    a.small-text(href='/form/contentAssign/#{entry.id}') Pickup SKU
+    a.small-text(href='/form/contentAssign/#{entry.id}') - Pickup SKU
   - else
-    p.small-text Pickup SKU-Done
+    p.small-text - Pickup SKU-Done
 div#form3
   - if(entry.catalog_name === null)
-    a.small-text(href='/form/contentComplete/#{entry.id}') Req. Images
+    a.small-text(href='/form/contentComplete/#{entry.id}') - Req. Images
   - else
-    p.small-text Req. Images-Done
+    p.small-text - Req. Images-Done
 div#form4
   - if(entry.photo_complete_date === null)
-    a.small-text(href='/form/photoUpdate/#{entry.id}') PhotoShoot Complete
+    a.small-text(href='/form/photoUpdate/#{entry.id}') - PhotoShoot Complete
   - else
-    p.small-text PhotoShoot Complete-Done
+    p.small-text - PhotoShoot Complete-Done
 div#form5
   - if(entry.editing_completion_date === null)
-    a.small-text(href='/form/editUpdate/#{entry.id}') Editing Req.
+    a.small-text(href='/form/editUpdate/#{entry.id}') - Editing Req.
   - else
-    p.small-text Editing Req.- Done
+    p.small-text - Editing Req.- Done
 div#form6
   - if(entry.approved_image_path === null)
-    a.small-text(href='/form/imageApproval/#{entry.id}') Img Approved
+    a.small-text(href='/form/imageApproval/#{entry.id}') - Img Approved
   - else
-    p.small-text Img Approved-Done
+    p.small-text - Img Approved-Done
 div#form7
   - if(entry.launch_complete === null)
-    a.small-text(href='/form/prodLaunch/#{entry.id}') Launch Complete
+    a.small-text(href='/form/prodLaunch/#{entry.id}') - Launch Complete
   - else
-    p.small-text Launch Complete-Done
+    p.small-text - Launch Complete-Done

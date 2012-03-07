@@ -11,7 +11,6 @@ block content
       label.control-label(for="approvedImagePath") Approved Image Path :
       div.controls
         input(type="text", name="approvedImagePath", id="approvedImagePath")
-
     div.control-group
       label.control-label(for="approvedImages") Approved Images :
       div.controls
@@ -19,10 +18,7 @@ block content
     div.control-group
       label.control-label(for="approvedDate") Approved Date :
       div.controls
-        div.input-append.date(id="approvedDateDiv", data-date="12/01/2012", data-date-format="dd/mm/yyyy")
-          input.span2(size="16", value="12/01/2012", readonly, name="approvedDate", id="approvedDate")
-          span.add-on
-            i.icon-th
+        input.input-small(type="text", name="approvedDate", id="approvedDate", readonly="readonly")
     div.control-group
       label.control-label(for="rating") Rating :
       div.controls

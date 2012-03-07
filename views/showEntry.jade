@@ -91,7 +91,10 @@ block content
     div.control-group
       label.control-label(for="launchComplete") Launch Complete :
       div.controls
-        input(type="text", name="launchComplete", id="launchComplete", readonly="readonly", value="#{entry.launch_complete}")
+        - if(entry.launch_complete === 1)
+          input(type="text", name="launchComplete", id="launchComplete", readonly="readonly", value="Yes")
+        - else
+          input(type="text", name="launchComplete", id="launchComplete", readonly="readonly", value="No")
     div.control-group
       label.control-label(for="launchDate") Launch Date:
       div.controls
