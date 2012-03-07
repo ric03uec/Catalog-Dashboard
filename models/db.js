@@ -2,14 +2,20 @@
 
 var util = require('util');
 var mysql = require('mysql');
-var DATABASE = 'catalog_dashboard';
+var dbConfig = require('../config').db;
 
 var db = mysql.createClient({
-  'user' : 'root',
-  'password': 'root'
+  'user' : dbConfig.user,
+  'password': dbConfig.password
 });
 
-db.query('use catalog_dashboard');
+db.useDatabase(dbConfig.database, function(err, res){
+ if(err){
+    util.log('error while selecting the database');
+  }else{
+    util.log('Database successfully selected');
+  }
+});
 
 db.ping(function(err){
   if(err){
@@ -25,7 +31,7 @@ if(require.main == module){
   (function(){
     db.query('select * from entries', function(err, results, fields){
       console.log(err);
-      console.log(results);
+      //console.log(results);
     }); 
   })()
 }
