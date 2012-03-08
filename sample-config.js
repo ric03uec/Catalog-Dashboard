@@ -1,4 +1,4 @@
-var config = {
+asdflkjsddflkkjlksjdflksdjfvar config = {
   db : {
     'user' : 'root',
     'password' : 'root',

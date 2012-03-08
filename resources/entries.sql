@@ -20,7 +20,7 @@ CREATE TABLE `entries` (
   `approved_images` int(11) DEFAULT NULL,
   `approved_date` datetime DEFAULT NULL,
   `rating` int(11) DEFAULT NULL,
-  `launch_complete` tinyint(1) DEFAULT NULL,
+  `launch_complete` tinyint(1) DEFAULT 0,
   `launch_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 ;

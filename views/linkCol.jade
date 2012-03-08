@@ -2,29 +2,29 @@ div#form2
   - if(entry.content_asignee === null)
     a.small-text(href='/form/contentAssign/#{entry.id}') - Pickup SKU
   - else
-    p.small-text - Pickup SKU-Done
+    p.small-text - SKU Assigned [Y]
 div#form3
   - if(entry.catalog_name === null)
-    a.small-text(href='/form/contentComplete/#{entry.id}') - Req. Images
+    a.small-text(href='/form/contentComplete/#{entry.id}') - Request Images
   - else
-    p.small-text - Req. Images-Done
+    p.small-text - Content Ready [Y]
 div#form4
   - if(entry.photo_complete_date === null)
     a.small-text(href='/form/photoUpdate/#{entry.id}') - PhotoShoot Complete
   - else
-    p.small-text - PhotoShoot Complete-Done
+    p.small-text - PhotoShoot Done [Y]
 div#form5
   - if(entry.editing_completion_date === null)
-    a.small-text(href='/form/editUpdate/#{entry.id}') - Editing Req.
+    a.small-text(href='/form/editUpdate/#{entry.id}') - Editing Complete
   - else
-    p.small-text - Editing Req.- Done
+    p.small-text - Editing Done [Y]
 div#form6
   - if(entry.approved_image_path === null)
-    a.small-text(href='/form/imageApproval/#{entry.id}') - Img Approved
+    a.small-text(href='/form/imageApproval/#{entry.id}') - Approve Image
   - else
-    p.small-text - Img Approved-Done
+    p.small-text -  Images Approved [Y]
 div#form7
-  - if(entry.launch_complete === null)
+  - if(entry.launch_complete === 0)
     a.small-text(href='/form/prodLaunch/#{entry.id}') - Launch Complete
-  - else
-    p.small-text - Launch Complete-Done
+  - else if(entry.launch_complete === 1)
+    p.small-text - Launched [Y]
