@@ -6,6 +6,16 @@ var Moment = require('moment');
 
 var catalog = {};
 
+var convertDate = function(dateStr){
+  if(null !== dateStr){
+    var date = Moment(dateStr + '', "ddd MMM DD YYYY hh:mm:ss zz");
+    date = Moment(date).format("DD-MM-YYYY");
+    return date;
+  }else{
+    return 'Incomplete';
+  }
+};
+
 catalog.getAll = function(callback){
   var queryStr = 'select * from entries ';
   db.query(queryStr, function(err, results){
@@ -13,9 +23,7 @@ catalog.getAll = function(callback){
       var reverseResults = [];
       for(var i = results.length-1 ; i >= 0 ; i--){
         var date = results[i]['stock_arrival_date'];
-        date = Moment(date+ '', "ddd, DD MMM YYYY hh:mm:ss zz")
-        date = Moment(date).format('DD-MM-YYYY');
-        results[i]['stock_arrival_date'] = date;
+        results[i]['stock_arrival_date'] = convertDate(date);
         reverseResults.push(results[i]);
       }
       callback(null, reverseResults);
