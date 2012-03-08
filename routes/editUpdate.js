@@ -18,7 +18,7 @@ editUpdate .show = function(req, res){
 
 editUpdate .save = function(req, res){
 
-  var editedImgPath= req.body.editedImagePath;
+  var editedImgPath= escape(req.body.editedImagePath);
   var editCompDate= req.body.editingCompDate;
   editCompDate= Moment(editCompDate,"DD/MM/YYYY").format('YYYY-MM-DD');
   var queryStr = 'update entries set editing_completion_date= "' +editCompDate+ '" ' +
@@ -29,7 +29,7 @@ editUpdate .save = function(req, res){
     if(!err && results){
       res.redirect('/dashboard');
     }else{
-      logger.error('Error updating table for Content Assignment');
+      logger.error('Error updating table for Edit Update: ' + err);
     }
   });
 };

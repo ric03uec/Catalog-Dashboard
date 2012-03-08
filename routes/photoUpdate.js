@@ -20,8 +20,8 @@ photoUpdate.save = function(req, res){
   var compDate = req.body.photoCompleteDate;
   compDate = Moment(compDate,"DD/MM/YYYY").format('YYYY-MM-DD');
   var noOfImages = req.body.noOfImages;
-  var editingAssignedTo = req.body.editingAssignedTo;
-  var rawImageLocation = req.body.rawImageLocation;
+  var editingAssignedTo = escape(req.body.editingAssignedTo);
+  var rawImageLocation = escape(req.body.rawImageLocation);
   var imgAssignDate = req.body.imageAssignDate;
   imgAssignDate= Moment(imgAssignDate,"DD/MM/YYYY").format('YYYY-MM-DD');
 
@@ -35,7 +35,7 @@ photoUpdate.save = function(req, res){
     if(!err && results){
       res.redirect('/dashboard');
     }else{
-      logger.error('Error updating table for Content Assignment');
+      logger.error('Error updating table for Photo Update :' + err);
     }
   });
 };

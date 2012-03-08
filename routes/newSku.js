@@ -32,7 +32,7 @@ newSku.save = function(req, res){
         }
       });
     }else{
-      logger.error('Error inserting form 1 in db' + err);
+      logger.error('Error inserting NewSku in db' + err);
     }
   }); 
 };

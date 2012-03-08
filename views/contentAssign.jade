@@ -1,6 +1,7 @@
 extends index
 
 block content
+  a.btn(href="/form/complete/#{entryId}") View History
   h2 #{formName}
   form.form-horizontal(method="post", id="contentAssignForm", action="/form/contentAssign")
     div.control-group

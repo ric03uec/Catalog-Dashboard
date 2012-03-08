@@ -52,11 +52,11 @@ block content
     div.control-group
       label.control-label(for="editAssigTo") Editing Assigned To :
       div.controls
-        input(type="text", name="editAssigTo", id="editAssigTo", readonly="readonly", value="#{entry.editing_assigned_to}")
+        input(type="text", name="editAssigTo", id="editAssigTo", readonly="readonly", value="#{unescape(entry.editing_assigned_to)}")
     div.control-group
       label.control-label(for="rawImgLocation") Raw Image Location :
       div.controls
-        input(type="text", name="rawImgLocation", id="rawImgLocation", readonly="readonly", value="#{entry.raw_image_location}")
+        input(type="text", name="rawImgLocation", id="rawImgLocation", readonly="readonly", value="#{unescape(entry.raw_image_location)}")
     div.control-group
       label.control-label(for="imgAssignDate") Image Assignment Date :
       div.controls
@@ -69,12 +69,12 @@ block content
     div.control-group
       label.control-label(for="editedImagePath") Edited Image Path :
       div.controls
-        input(type="text", name="editedImagePath", id="editedImagePath", readonly="readonly", value="#{entry.edited_image_path}")
+        input(type="text", name="editedImagePath", id="editedImagePath", readonly="readonly", value="#{unescape(entry.edited_image_path)}")
     p ----------------------------------------------------------------------------------------------
     div.control-group
       label.control-label(for="approvedImgPath") Approved Image Path :
       div.controls
-        input(type="text", name="approvedImgPath", id="approvedImgPath", readonly="readonly", value="#{entry.approved_image_path}")
+        input(type="text", name="approvedImgPath", id="approvedImgPath", readonly="readonly", value="#{unescape(entry.approved_image_path)}")
     div.control-group
       label.control-label(for="approvedImgs") Approved Images :
       div.controls

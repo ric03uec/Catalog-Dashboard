@@ -28,7 +28,7 @@ prodLaunch.save = function(req, res){
     if(!err && results){
       res.redirect('/dashboard');
     }else{
-      logger.error('Error updating table for Content Assignment');
+      logger.error('Error updating table for Product Launch : ' + err);
     }
   });
 };

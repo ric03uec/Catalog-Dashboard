@@ -17,11 +17,11 @@ imgApproval.show = function(req, res){
 };
 
 imgApproval.save = function(req, res){
-  var approvedImgPath = req.body.approvedImagePath;
+  var approvedImgPath = escape(req.body.approvedImagePath);
   var approvedImages = req.body.approvedImages;
   var approvedDate = req.body.approvedDate;
   approvedDate = Moment(approvedDate,"DD/MM/YYYY").format('YYYY-MM-DD');
-  var rating = req.body.rating;
+  var rating = parseInt(req.body.rating, 10);
 
   var queryStr = 'update entries set approved_image_path= "' + approvedImgPath + '" ' +
                 ', approved_images ="' + approvedImages + '" ' +  
@@ -33,7 +33,7 @@ imgApproval.save = function(req, res){
     if(!err && results){
       res.redirect('/dashboard');
     }else{
-      logger.error('Error updating table for Content Assignment');
+      logger.error('Error updating table for Image Approval : ' + err);
     }
   });
 };
