@@ -9,6 +9,10 @@ var db = mysql.createClient({
   'password': dbConfig.password
 });
 
+db.on('connect', function() { 
+  client.query('use ' + dbConfig.database); 
+});
+
 db.useDatabase(dbConfig.database, function(err, res){
  if(err){
     util.log('error while selecting the database');
