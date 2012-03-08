@@ -26,7 +26,6 @@ dashboard.show = function(req, res){
       for(var i = 0 ; i < completeArr.length ;i++){
         incompleteArr.push(completeArr[i]);
       }
-      console.log(incompleteArr);
       res.render('dashboard', 
                 {'title' : 'catalog Dashboard',
                  'formType' : 'all',
