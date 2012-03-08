@@ -11,8 +11,8 @@ var main = {};
 
 var convertDate = function(dateStr){
   if(null !== dateStr){
-    var date = Moment(dateStr + '', "ddd, DD MMM YYYY hh:mm:ss zz");
-    date = Moment(date).format('DD-MM-YYYY');
+    var date = Moment(dateStr + '', "ddd MMM DD YYYY hh:mm:ss zz");
+    date = Moment(date).format("DD-MM-YYYY");
     return date;
   }else{
     return 'Incomplete';
