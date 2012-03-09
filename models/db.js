@@ -4,10 +4,7 @@ var util = require('util');
 var mysql = require('mysql');
 var dbConfig = require('../config').db;
 
-var db = mysql.createClient({
-  'user' : dbConfig.user,
-  'password': dbConfig.password
-});
+var db = mysql.createClient(dbConfig);
 
 db.on('connect', function() { 
   client.query('use ' + dbConfig.database); 

@@ -1,8 +1,10 @@
 var config = {
-  db : {
-    'user' : 'root',
-    'password' : 'root',
-    'database' : 'catalog_dashboard'
+  db : { 
+    host: 'localhost',
+    port: 3306,
+    user: 'username',
+    password: 'password',
+    database : 'catalog_dashboard'
   }
 }
 module.exports = config;
